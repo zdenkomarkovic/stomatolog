@@ -1,23 +1,19 @@
-export const navList = [
+// Navigation structure - translations are handled by LanguageContext
+export const navStructure = [
   {
-    title: "Početna",
+    key: "home",
     link: "/",
   },
   {
-    title: "Usluge",
-    list: [
-      {
-        title: "Usluga 1",
-        link: "",
-      },
-      {
-        title: "Usluga 2",
-        link: "",
-      },
-    ],
+    key: "services",
+    link: "/usluge",
   },
   {
-    title: "Kontakt",
+    key: "about",
+    link: "/o-nama",
+  },
+  {
+    key: "contact",
     link: "/kontakt",
   },
 ];

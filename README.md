@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dr Violeta Vladimirov - Stomatološka ordinacija
 
-## Getting Started
+Profesionalan, SEO optimizovan sajt za stomatološku ordinaciju Dr Violeta Vladimirov u Subotici.
 
-First, run the development server:
+## 🌟 Karakteristike
+
+- ✅ **Dvojezična podrška** - Srpski i engleski jezik
+- ✅ **SEO optimizovan** - Meta tagovi, strukturni podaci (Schema.org)
+- ✅ **Moderni dizajn** - Profesionalan i prijatan izgled
+- ✅ **Responzivan** - Prilagođen svim uređajima (mobilni, tablet, desktop)
+- ✅ **Brze performanse** - Optimizovane slike i kod
+- ✅ **Kontakt forma** - Funkcionalna kontakt forma sa emailom
+- ✅ **Animacije** - Smooth animacije sa Framer Motion
+- ✅ **Mapa lokacije** - Integrisana Google Maps mapa
+
+## 📄 Stranice
+
+1. **Početna** (`/`) - Hero sekcija, statistike, pregled usluga, poziv na akciju
+2. **Usluge** (`/usluge`) - Kompletna lista stomatoloških usluga
+3. **O nama** (`/o-nama`) - Informacije o Dr Violeta Vladimirov
+4. **Kontakt** (`/kontakt`) - Kontakt forma, mapa, društvene mreže
+
+## 🚀 Pokretanje projekta
+
+### Instalacija
+
+```bash
+npm install
+```
+
+### Development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Otvorite [http://localhost:3000](http://localhost:3000) u browseru.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 📧 Konfiguracija Email-a
 
-To learn more about Next.js, take a look at the following resources:
+Za funkcionalnu kontakt formu, potrebno je podesiti email konfiguraciju:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Otvorite `lib/send-mail.ts`
+2. Konfigurišite Nodemailer sa vašim email podacima
+3. Postavite environment varijable:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```env
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-app-password
+EMAIL_TO=dr.milan.vladimirov@gmail.com
+```
 
-## Deploy on Vercel
+## 🌐 Promena jezika
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Jezik možete promeniti klikom na dugme **SR/EN** u header-u sajta. Jezik se čuva u `localStorage`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎨 Prilagođavanje
+
+### Boje
+
+Boje se mogu prilagoditi u `app/globals.css` fajlu:
+
+```css
+:root {
+  --primary: 200 98% 39%; /* Plava */
+  --secondary: 210 40% 96.1%;
+  /* ... */
+}
+```
+
+### Slike
+
+Sve slike se nalaze u `public/images/` folderu. Možete ih zameniti sa vašim slikama.
+
+### Tekstualni sadržaj
+
+Svi prevodi se nalaze u `i18n/translations.ts` fajlu. Tu možete menjati sve tekstove na srpskom i engleskom.
+
+## 📱 Kontakt informacije
+
+- **Telefon:** +381 62 856 1867
+- **Email:** dr.milan.vladimirov@gmail.com
+- **Lokacija:** Subotica, Srbija
+
+## 🛠️ Tehnologije
+
+- **Next.js 15** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Framer Motion** - Animacije
+- **React Hook Form** - Forme
+- **Zod** - Validacija
+- **Lucide React** - Ikonice
+- **Nodemailer** - Email slanje
+
+## 📝 Napomene
+
+- Sajt je potpuno SEO optimizovan sa strukturnim podacima
+- Sve stranice su responsive i optimizovane za sve uređaje
+- Kontakt forma je spremna za integraciju sa email serverom
+- Google Maps je integrisan na kontakt strani
+- Društvene mreže linkovi su spremni za vaše profile
+
+## 🔒 Licenca
+
+Sva prava zadržana © 2025 Dr Violeta Vladimirov
+
+---
+
+Razvio: **Manikam Web Solutions**
