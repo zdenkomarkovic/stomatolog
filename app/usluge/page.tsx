@@ -20,10 +20,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
+  initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.5 }
+  viewport: { once: true, margin: "-50px" },
+  transition: { duration: 0.4 }
 };
 
 export default function ServicesPage() {
@@ -102,9 +102,9 @@ export default function ServicesPage() {
       <section className="relative py-20 bg-gradient-to-br from-primary/10 via-white to-cyan-50">
         <div className="container mx-auto px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
@@ -125,7 +125,7 @@ export default function ServicesPage() {
               <motion.div
                 key={index}
                 {...fadeInUp}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.05, duration: 0.4 }}
               >
                 <Card className="overflow-hidden hover:shadow-2xl transition-shadow duration-300">
                   <div className={`grid lg:grid-cols-2 gap-0 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>

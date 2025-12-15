@@ -15,10 +15,10 @@ import ContactForm from "@/components/ContactForm";
 import { Card, CardContent } from "@/components/ui/card";
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
+  initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.5 }
+  viewport: { once: true, margin: "-50px" },
+  transition: { duration: 0.4 }
 };
 
 export default function ContactPage() {
@@ -60,9 +60,9 @@ export default function ContactPage() {
       <section className="relative py-20 bg-gradient-to-br from-primary/10 via-white to-cyan-50">
         <div className="container mx-auto px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
@@ -83,7 +83,7 @@ export default function ContactPage() {
               <motion.div
                 key={index}
                 {...fadeInUp}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.05, duration: 0.4 }}
               >
                 <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                   <CardContent className="p-6 text-center">
@@ -118,7 +118,7 @@ export default function ContactPage() {
               <ContactForm />
             </motion.div>
 
-            <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
+            <motion.div {...fadeInUp} transition={{ delay: 0.1, duration: 0.4 }}>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 {t.contact.map}
               </h2>

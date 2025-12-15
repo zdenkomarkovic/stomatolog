@@ -9,31 +9,41 @@ interface LanguageContextType {
   t: typeof translations.sr;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+// Default value with Serbian translations
+const defaultValue: LanguageContextType = {
+  language: 'sr',
+  setLanguage: () => {},
+  t: translations.sr,
+};
+
+const LanguageContext = createContext<LanguageContextType>(defaultValue);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>('sr');
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
     // Load language from localStorage only on client
-    if (typeof window !== 'undefined') {
-      const savedLanguage = localStorage.getItem('language') as Language;
-      if (savedLanguage && (savedLanguage === 'sr' || savedLanguage === 'en')) {
-        setLanguageState(savedLanguage);
-      }
+    const savedLanguage = localStorage.getItem('language') as Language;
+    if (savedLanguage && (savedLanguage === 'sr' || savedLanguage === 'en')) {
+      setLanguageState(savedLanguage);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isClient) {
       document.documentElement.lang = language;
     }
-  }, [language]);
+  }, [language, isClient]);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('language', lang);
-      document.documentElement.lang = lang;
-    }
+    localStorage.setItem('language', lang);
+    document.documentElement.lang = lang;
   };
 
-  const value = {
+  const value: LanguageContextType = {
     language,
     setLanguage,
     t: translations[language],
@@ -48,8 +58,5 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
 export function useLanguage() {
   const context = useContext(LanguageContext);
-  if (context === undefined) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
   return context;
 }
